@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Car Build Bay</title>
+  <meta name="description" content="An interactive 3D car you can pull apart, rebuild and watch working.">
+</head>
+<body>
+<header>
+  <h1>Car build bay</h1>
+  <span id="count"></span>
+</header>
+
+<div id="stage">
+  <div class="float" id="modes">
+    <button id="mExplore" aria-pressed="true">Explore</button>
+    <button id="mBuild" aria-pressed="false">Build</button>
+  </div>
+  <div class="float" id="tools">
+    <button id="labelBtn" aria-pressed="true">Labels</button>
+    <button id="spin" aria-pressed="false">Turntable</button>
+  </div>
+  <svg id="leads"></svg>
+  <div id="labels"></div>
+  <div class="float" id="hint">Drag to orbit · pinch to zoom · tap a part</div>
+  <button class="float" id="back">Show whole car</button>
+  <div class="float" id="caption"><span id="capNum"></span><p id="capText"></p></div>
+  <div class="float" id="demoBar">
+    <button class="btn" id="prevBtn">Back</button>
+    <button class="btn key" id="playBtn">Pause</button>
+    <button class="btn" id="nextBtn">Next</button>
+    <button class="btn" id="voiceBtn" aria-pressed="true">Voice on</button>
+  </div>
+  <div class="float" id="toast"></div>
+</div>
+
+<div id="tray">
+  <div class="row" id="explodeRow">
+    <label for="ex">Pull apart</label>
+    <input id="ex" type="range" min="0" max="100" value="0">
+  </div>
+  <div class="row" id="buildRow" style="display:none">
+    <button class="btn key" id="installNext">Install next</button>
+    <button class="btn" id="tourBtn">Guided build</button>
+    <button class="btn" id="strip">Strip down</button>
+  </div>
+  <div class="row" id="paceRow" style="display:none">
+    <span>Pace</span>
+    <div id="pace">
+      <button data-ms="7000">Slow</button>
+      <button data-ms="4200" aria-pressed="true">Steady</button>
+      <button data-ms="1900">Quick</button>
+    </div>
+  </div>
+  <div id="info">
+    <div class="tag" id="iTag">Nothing selected</div>
+    <h2 id="iName">Tap any part of the car</h2>
+    <p id="iText">Every piece is separate. Pull the car apart with the slider, or switch to Build to assemble it in the order a real car goes together on the line.</p>
+    <div id="facts"></div>
+    <button class="btn" id="howBtn" style="display:none;margin-top:10px">See how it works</button>
+  </div>
+  <div id="chips"></div>
+</div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
